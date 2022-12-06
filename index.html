@@ -1,0 +1,504 @@
+<!-- Build a Technical Documentation Page
+Objective: Build an app that is functionally similar to https://technical-documentation-page.freecodecamp.rocks
+
+User Stories:
+
+You can see a main element with a corresponding id="main-doc", which contains the page's main content (technical documentation) ✅
+Within the #main-doc element, you can see several section elements, each with a class of main-section. There should be a minimum of five ✅
+The first element within each .main-section should be a header element, which contains text that describes the topic of that section. ✅
+Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "JavaScript and Java" should have a corresponding id="JavaScript_and_Java") ✅
+The .main-section elements should contain at least ten p elements total (not each) ✅
+The .main-section elements should contain at least five code elements total (not each) ✅
+The .main-section elements should contain at least five li items total (not each) ✅
+You can see a nav element with a corresponding id="navbar" ✅
+The navbar element should contain one header element which contains text that describes the topic of the technical documentation ✅
+Additionally, the navbar should contain link (a) elements with the class of nav-link. There should be one for every element with the class main-section ✅
+The header element in the #navbar must come before any link (a) elements in the navbar ✅
+Each element with the class of nav-link should contain text that corresponds to the header text within each section (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world") ✅
+When you click on a navbar element, the page should navigate to the corresponding section of the #main-doc element (e.g. If you click on a .nav-link element that contains the text "Hello world", the page navigates to a section element with that id, and contains the corresponding header) ✅
+On regular sized devices (laptops, desktops), the element with id="navbar" should be shown on the left side of the screen and should always be visible to the user ✅
+Your technical documentation should use at least one media query ✅
+Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding! ✅
+
+Note: Be sure to add <link rel="stylesheet" href="styles.css"> in your HTML to link your stylesheet and apply your CSS -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIT Documentation</title>
+    <link rel="stylesheet" href="prism.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="logo">
+      <img src="https://imgur.com/DVnHemf.png" alt="GIT Logo" />
+      <h1>--git-documentation</h1>
+    </header>
+    <div id="main-doc">
+      <nav id="navbar">
+        <header>Topics</header>
+        <ul>
+          <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+          <li><a class="nav-link" href="#Initial_Setup">Initial Setup</a></li>
+          <li><a class="nav-link" href="#Basic_Flow">Basic Flow</a></li>
+          <li><a class="nav-link" href="#Help">Help</a></li>
+          <li><a class="nav-link" href="#Ignore_Files">Ignore Files</a></li>
+          <li><a class="nav-link" href="#Clone_Repositories">Clone Repositories</a></li>
+          <li><a class="nav-link" href="#Branches">Branches</a></li>
+          <li><a class="nav-link" href="#Merges">Merges</a></li>
+          <li><a class="nav-link" href="#Changes">Changes</a></li>
+          <li><a class="nav-link" href="#History_Record">History Record</a></li>
+          <li><a class="nav-link" href="#History_Reset">History Reset</a></li>
+          <li><a class="nav-link" href="#Reset_Repository">Reset Repository</a></li>
+          <li><a class="nav-link" href="#Remote">Remote</a></li>
+          <li><a class="nav-link" href="#Tags">Tags</a></li>
+          <li><a class="nav-link" href="#GitHub_Pages">GitHub Pages</a></li>
+          <li><a class="nav-link" href="#Collaboration_On_GitHub">Collaboration On GitHub</a></li>
+          <li><a class="nav-link" href="#More">More</a></li>
+        </ul>
+      </nav>
+      <div id="main-content">
+        <section id="Introduction" class="main-section">
+          <header>Introduction</header>
+          <p>
+            <a href="https://git-scm.com/">Git</a> isdecentralized, distributed version control software that allows a
+            team of developers to work on the same code.
+          </p>
+          <p>It is called "distributed" because each team member has a complete copy of the code.</p>
+          <p>
+            Team members can send code to each other, receive it, and develop functionality together and separately from
+            the central server.
+          </p>
+          <p>Some advantages of using it:</p>
+          <ul>
+            <li>It is the current standard.</li>
+            <li>Collaborative, versioned and distributed code.</li>
+            <li>File recovery.</li>
+            <li>Greater control.</li>
+            <li>Shortcuts and plugins .</li>
+            <li>Improve productivity.</li>
+          </ul>
+          <img class="img-content" src="https://imgur.com/IgoVnnY.png" alt="Git Flow" srcset="" />
+          <h3>Facility:</h3>
+          <ul>
+            <li><a href="https://git-scm.com/downloads">Git</a></li>
+            <li>Graphic interfaces:</li>
+            <ul>
+              <li><a href="https://www.sourcetreeapp.com/">SourceTree</a></li>
+              <li><a href="https://desktop.github.com/">GitHub Desktop</a></li>
+              <li><a href="https://www.gitkraken.com/">GitKraken</a></li>
+              <li><a href="https://code.visualstudio.com/#built-in-git">Visual Studio Code</a></li>
+              <li>etc.</li>
+            </ul>
+          </ul>
+          <h3>Web platforms that work with Git:</h3>
+          <ul>
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://gitlab.com/">GitLab</a></li>
+            <li><a href="https://bitbucket.org/">BitBucket</a></li>
+            <li>etc.</li>
+          </ul>
+          <img class="img-content" src="https://imgur.com/NApM25y.png" alt="GIT is not GITHUB" />
+        </section>
+        <section id="Initial_Setup" class="main-section">
+          <header>Initial Setup</header>
+          <h3>Setting up Git for the first time</h3>
+          <pre><code class="language-bash">git --version
+git config --global user.name "Your Name"
+git config --global user.email your@email.com
+git config --global user.ui true
+git config --global init.defaultBranch main
+git config --list
+# assigning Visual Studio code as git config editor
+git config --global core.editor "code --wait"
+git config --global -e
+# to standardize line breaks in windows
+git config --global core.autocrlf true
+# to standardize line breaks on linux/mac
+git config --global core.autocrlf input
+# view all configuration options in terminal
+git config -h
+# see all configuration options in the browser
+git help config</code></pre>
+          <h3>Initialize Git in a local directory</h3>
+          <pre><code class="language-bash">mkdir folder
+cd folder
+touch README.md
+touch .gitignore
+git init
+code .</code></pre>
+        </section>
+        <section id="Basic_Flow" class="main-section">
+          <header>Basic Flow</header>
+          <p>
+            The Git flow consists of three local states, that is, on the computer where you are working and one more
+            remotely when you access the centralized code on platforms such as GitHub, Gitlab, Bitbucket, etc.
+          </p>
+          <p>These states are modified, staged, committed, and remote. Each of them corresponds to a work area:</p>
+          <ol>
+            <li>
+              <i>Working Directory</i>: It is the area corresponding to the modified state and it is the local folder of
+              your computer where you store the files of your project.
+            </li>
+            <li>
+              <i>Staging Area</i>: It is the area corresponding to the staged state, it is also called index because it
+              is the area where git indexes and adds the changes made to the files prior to committing them in its
+              registry.
+            </li>
+            <li>
+              <i>Local Repository</i>: It is the area corresponding to the committed state, where the changes have
+              already been registered in the git repository. It is also called HEAD because it indicates in which change
+              the repository pointer is located.
+            </li>
+            <li>
+              <i>Remote Repository</i>: It is the area corresponding to the remote state and it is the remote directory
+              where we store the project files on a web platform such as GitHub, GitLab, BitBucket. Git namesthe remote
+              repository origin.
+            </li>
+          </ol>
+          <img class="img-content" src="https://imgur.com/bmkBY8C.png" alt="GIT Flow" />
+          <pre><code class="language-bash"># add the changes of a file to the staged
+git add directory/file
+# add all changes from all files to staged
+git add .
+
+# changes are committed to the repository
+# you must write the change message
+# when the configuration file is opened
+# when finished save and close the file
+# for the changes to take effect
+git commit
+# is a shortcut of the previous command
+# write and commit the change message in one step
+git commit -m "message describing the change"
+
+# add the remote origin of your GitHub repository
+git remote add origin https://github.com/user/repository.git
+# the first time we link the remote repository to the local one
+git push -u origin main
+# for subsequent updates, if you don't switch branches
+git push
+
+# to download the changes from the remote repository to the local one
+git pull</code></pre>
+        </section>
+        <section id="Help" class="main-section">
+          <header>Help</header>
+          <pre><code class="language-bash"># help in terminal
+git -h
+# help in the browser (X is a command)
+git help X</code></pre>
+        </section>
+        <section id="Ignore_Files" class="main-section">
+          <header>Ignore Files</header>
+          <p>
+            In the file <i>.gitignorewe</i> include everything that we do NOT want to include in our repository. We can
+            create it manually or with <a href="https://www.gitignore.io/">gitignore.io</a>.
+          </p>
+          <pre><code class="language-bash"># this is a comment
+file.ext
+folder
+/file_from_root.ext
+
+# ignore all files ending in .log
+*.log
+# except production.log
+!production.log
+
+# ignore files ending in .txt inside the doc folder,
+# but not in its subfolders
+doc/*.txt
+# ignore all files ending in .txt inside the doc folder
+# and also in its subfolders
+doc/**/*.txt</code></pre>
+        </section>
+        <section id="Clone_Repositories" class="main-section">
+          <header>Clone Repositories</header>
+          <pre><code class="language-bash">git clone https://github.com/user/repository.git</code></pre>
+        </section>
+        <section id="Branches" class="main-section">
+          <header>Branches</header>
+          <p>A branch allows us to isolate new functionality in our code that we can then add to the main version.</p>
+          <pre><code class="language-bash"># create branch
+git branch branch-name
+
+# change branch
+git checkout branch-name
+
+# create a branch and switch to it
+git checkout -b branch
+
+# delete branch
+git branch -d branch-name
+
+# remove remote branches
+git push origin --delete branch-name
+
+#delete branch (forced)
+git branch -D branch-name
+
+# list all branches of the repository
+git branch
+
+# list branches not merged into the current branch
+git branch --no-merged
+
+# list branches merged into the current branch
+git branch --merged
+
+# rebasing branches
+git checkout child-branch
+git rebase main-branch</code></pre>
+        </section>
+        <section id="Merges" class="main-section">
+          <header>Merges</header>
+          <p>Join two branches. To make a merge we need:</p>
+          <ol>
+            <li>Go to the branch that will keep the merged content.</li>
+            <li>Fuse.</li>
+          </ol>
+          <p>When branches are merged, 2 different results can be given:</p>
+          <ul>
+            <li><i>Fast-Forward</i>: The merger is done automatically, there are no conflicts to resolve.</li>
+            <li><i>Manual Merge</i>: The merge must be done manually, to resolve content duplication conflicts.</li>
+          </ul>
+          <pre><code class="language-bash"># switch to the main branch that will remain from the merge
+git checkout main-branch
+
+# run the merge command with the secondary branch to merge
+git merge child-branch</code></pre>
+        </section>
+        <section id="Changes" class="main-section">
+          <header>Changes</header>
+          <p>You can add modifications to the last change</p>
+          <pre><code class="language-bash"># without editing the message of the last commit
+git commit --amend --no-edit
+
+# editing the message of the last commit
+git commit --amend -m "new message for last commit"
+
+# remove the last commit
+git reset --hard HEAD~1</code></pre>
+          <p>
+            We can scroll the repository history backwards or forwards in changes or branches, without affecting the
+            repository itself.
+          </p>
+          <pre><code class="language-bash"># switch to a branch
+git checkout branch-name
+
+# switch to a particular commit
+git checkout id-commit</code></pre>
+        </section>
+        <section id="History_Record" class="main-section">
+          <header>History Record</header>
+          <p>
+            git logIt allows us to know the entire history of a project, with information on the date, author and id of
+            each change.
+          </p>
+          <pre><code class="language-bash"># change the n to any integer and it will show the n recent changes
+git log -n
+
+# display changes made after the specified date
+git log --after="2019-07-07 00:00:00"
+
+# display changes made before the specified date
+git log --before="2019-07-08 00:00:00"
+
+# display changes made in the specified date range
+git log --after="2019-07-07 00:00:00" --before="2019-07-08 00:00:00"
+
+# display a graph of the change history, branch and merges
+git log --oneline --graph --all
+
+# show all log actions
+# including inserts, changes, deletes, merges, etc.
+git reflog
+
+# differences between the Working Directory and the Staging Area
+git diff</code></pre>
+        </section>
+        <section id="History_Reset" class="main-section">
+          <header>History Reset</header>
+          <p>We can remove the project's change history forward relative to a baseline.</p>
+          <pre><code class="language-bash"># shows us the list of new files (untracked), deleted or edited
+git status
+
+# delete HEAD
+git reset --soft
+
+# delete HEAD and staging
+git reset --mixed
+
+# delete everything: HEAD, Staging and Working Directory
+git reset --hard
+
+# undo all changes after the indicated commit, preserving the changes locally
+git reset id-commit
+
+# flush all history and return to the specified commit
+git reset --hard id-commit</code></pre>
+        </section>
+        <section id="Reset_Repository" class="main-section">
+          <header>Reset Repository</header>
+          <p>
+            If at any time you need to reset the change history of a repository so that it looks as if you had just
+            created it, execute this series of commands:
+          </p>
+          <pre><code class="language-bash">cd folder-repository
+mv .git/config ~/saved_git_config
+rm -rf .git
+git init
+git branch -M main
+git add .
+git commit -m "Initial commit"
+mv ~/saved_git_config .git/config
+git push --force origin main</code></pre>
+        </section>
+        <section id="Remote" class="main-section">
+          <header>Remote</header>
+          <pre><code class="language-bash"># show the remote sources of the repository
+git remote
+
+# show remote sources in detail
+git remote -v
+
+# add a remote source
+git remote add source-name https://github.com/user/repository.git
+
+# rename a remote source
+git remote rename old-name new-name
+
+# remove a remote source
+git remote remove source-name
+
+# download a remote branch to a different local branch than the main one
+git checkout --track -b remote-branch origin/remote-branch</code></pre>
+        </section>
+        <section id="Tags" class="main-section">
+          <header>Tags</header>
+          <p>With this option git allows us to version our code, library or project.</p>
+          <pre><code class="language-bash"># list tags
+git tag
+
+# create a label
+git tag version-number
+
+# remove a tag
+git tag -d version-number
+
+# display information about a label
+git show version-number
+
+# synchronizing the tag from the local to the remote repository
+git add .
+gittag v1.0.0
+git commit -m "v1.0.0"
+git push origin version-number
+
+# generating an annotated tag (with commit message)
+git add .
+git tag -a "v1.0.0" -m "Tag message"
+git push --tags</code></pre>
+        </section>
+        <section id="GitHub_Pages" class="main-section">
+          <header>GitHub Pages</header>
+          <p>
+            <a href="https://pages.github.com/">gh-pages</a> is a special branch for creating a website to your project
+            hosted directly on your <i>GitHub</i> repository.
+          </p>
+          <ul>
+            <li>URL del repositorio: <a>https://github.com/user/repository</a></li>
+            <li>URL del sitio: <a>https://user.github.io/repository</a></li>
+          </ul>
+          <p>Para crear esta rama especial en GitHub ejecutamos los siguientes comandos:</p>
+          <pre><code class="language-bash">git branch gh-pages
+git checkout gh-pages
+
+git remote add origin https://github.com/user/repository.git
+git push origin gh-pages
+
+# to download the changes from the remote repository to the local one
+git pull origin gh-pages</code></pre>
+        </section>
+        <section id="Collaboration_On_GitHub" class="main-section">
+          <header>Collaboration On GitHub</header>
+          <p>
+            In order to collaborate on projects hosted on <i>GitHub</i>, we need to make use of forks and pull requests,
+            tools that the platform offers us for this purpose.
+          </p>
+          <p>Below I describe the collaboration process on <i>GitHub</i>.</p>
+          <ol>
+            <li>
+              <i>Fork</i> the repository you want to contribute to, to do so, follow the instructions at this
+              <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">link</a>.
+            </li>
+            <li>Once the repository is forked in your GitHub account , <i>clone</i> it to your computer.</li>
+            <li>
+              In the local repository you have to configure the remote origins of your new copy to have both remotes,
+              the originals (<i>origin</i>) and those of your copy, to do so, follow the instructions in this
+              <a
+                href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-for-a-fork"
+                >link</a
+              >.
+            </li>
+            <li>
+              Create a new branch in your local <i>fork</i> to do your collaboration, and sync it with your remote
+              repository, to do so, follow the instructions at this
+              <a
+                href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork"
+                >link</a
+              >.
+            </li>
+            <li>
+              Configure your repository to accept changes (<i>pull requests</i>), to do so, follow the instructions in
+              this
+              <a
+                href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork"
+                >link</a
+              >.
+            </li>
+            <li>
+              Create a <i>pull request</i>, to do so, follow the instructions at this
+              <a
+                href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request"
+                >link</a
+              >.
+            </li>
+            <li>Wait for the owner of the original repository to accept your changes.</li>
+            <li>
+              Once your pull request is accepted, it is recommended that you delete the branch you worked on the change
+              on and update your forked repository with the changes from the original repository.
+            </li>
+          </ol>
+          <p>I have attached a summary of the commands to execute to collaborate in a GitHub repository:</p>
+          <pre><code class="language-bash"># fork repository
+git clone https://github.com/user/repository.git
+git remote -v
+git remote rename origin fork
+git remote add origin https://github.com/user/repository.git
+git checkout -b new-branch
+git push fork new-branch
+# request the pull request
+# accept the pull request
+git checkout main
+git pull origin main
+git push fork main
+git branch -d new-branch
+git push fork --delete new-branch</code></pre>
+        </section>
+        <section id="More" class="main-section">
+          <header>More</header>
+          <p>Here are some links where you can deepen your knowledge about Git and GitHub:</p>
+          <ul>
+            <li><a href="http://rogerdudler.github.io/git-guide/index.es.html">Git - the simple guide</a></li>
+            <li><a href="https://git-scm.com/book/es">Pro Git Book</a></li>
+            <li><a href="https://docs.github.com/es">Official GitHub Guides</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <script src="prism.js"></script>
+  </body>
+</html>

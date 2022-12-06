@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+  color: midnightblue;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+ul li::marker {
+  content: '🔸';
+}
+
+ul ul {
+  margin-left: 1rem;
+}
+
+ul ul li::marker {
+  content: '🔹';
+}
+
+ol {
+  counter-reset: item;
+}
+
+ol li {
+  counter-increment: item;
+}
+
+ol li::marker {
+  content: counter(item) '. ';
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: orangered;
+  text-decoration: underline;
+}
+
+#main-content a {
+  color: orangered;
+}
+
+#main-doc {
+  width: 100%;
+  max-width: 1024px;
+  margin: 2rem auto;
+  display: flex;
+}
+
+#logo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#logo > img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+}
+
+#logo > h1 {
+  font-size: 1.17em;
+}
+
+#navbar {
+  flex: 1;
+  padding: 0 1rem;
+  height: min-content;
+  position: sticky;
+  top: 1rem;
+}
+
+#navbar > header {
+  margin-bottom: 1rem;
+  font-size: 1.17em;
+  font-weight: 400;
+  color: midnightblue;
+}
+
+#navbar a {
+  font-size: 0.83em;
+}
+
+#main-content {
+  flex: 3;
+  border-left: 1px solid grey;
+  padding: 0 2rem;
+}
+
+.main-section {
+  margin-top: 3rem;
+}
+
+.main-section:first-child {
+  margin-top: auto;
+}
+
+.main-section > header {
+  color: orangered;
+  font-weight: 400;
+  font-size: 1.17rem;
+}
+
+.img-content {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 1rem;
+}
+
+pre {
+  border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    display: none;
+  }
+
+  #main-content {
+    border: none;
+  }
+
+  #main-doc {
+    display: block;
+  }
+
+  #logo > img {
+    max-width: 115px;
+  }
+}
